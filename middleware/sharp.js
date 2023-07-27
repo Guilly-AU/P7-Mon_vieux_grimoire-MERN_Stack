@@ -28,4 +28,3 @@ const optimizedImg = async (req, res, next) => {
 };
 
 module.exports = optimizedImg;
-//
