@@ -93,3 +93,24 @@ exports.getBestBooks = (req, res, next) => {
     .then((books) => res.status(200).json(books))
     .catch((error) => res.status(400).json({ error }));
 };
+
+exports.rateBook = (req, res, next) => {
+  if (!req.body.userId) {
+    res.status(401).json({ message: "Not authorized" });
+  } else {
+    const newRating = {
+      userId: req.body.userId,
+      grade: req.body.rating,
+    };
+
+    Book.findOneAndUpdate(
+      { _id: req.params.id, "ratings.userId": { $ne: req.body.userId } },
+      { $push: { ratings: newRating } },
+      { new: true }
+    )
+      .then((updatedBook) => {
+        res.status(200).json(updatedBook);
+      })
+      .catch((error) => res.status(400).json({ error }));
+  }
+};
