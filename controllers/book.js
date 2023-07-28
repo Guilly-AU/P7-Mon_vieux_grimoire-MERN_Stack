@@ -37,7 +37,7 @@ exports.modifyBook = (req, res, next) => {
   Book.findOne({ _id: req.params.id })
     .then((book) => {
       if (book.userId != req.auth.userId) {
-        res.status(401).json({ message: "Not authorized" });
+        res.status(403).json({ message: "Unauthorized request!" });
       } else if (req.file) {
         const filename = book.imageUrl.split("/images")[1];
         fs.unlink(`images/${filename}`, () => {});
@@ -46,7 +46,7 @@ exports.modifyBook = (req, res, next) => {
         { _id: req.params.id },
         { ...bookObject, _id: req.params.id }
       )
-        .then(() => res.status(200).json({ message: "Livre modifié!" }))
+        .then(() => res.status(200).json({ message: "Book modified!" }))
         .catch((error) => res.status(401).json({ error }));
     })
     .catch((error) => {
@@ -58,13 +58,13 @@ exports.deleteBook = (req, res, next) => {
   Book.findOne({ _id: req.params.id })
     .then((book) => {
       if (book.userId != req.auth.userId) {
-        res.status(401).json({ message: "Not authorized" });
+        res.status(403).json({ message: "Unauthorized request!" });
       } else {
         const filename = book.imageUrl.split("/images/")[1];
         fs.unlink(`images/${filename}`, () => {
           Book.deleteOne({ _id: req.params.id })
             .then(() => {
-              res.status(200).json({ message: "Livre supprimé !" });
+              res.status(200).json({ message: "Book deleted!" });
             })
             .catch((error) => res.status(401).json({ error }));
         });
@@ -100,14 +100,14 @@ exports.rateBook = (req, res, next) => {
   const userRating = req.body.rating;
 
   if (user !== req.auth.userId) {
-    return res.status(401).json({ message: "Not authorized" });
+    return res.status(401).json({ message: "Not authorized!" });
   } else {
     Book.findOne({ _id: req.params.id })
       .then((book) => {
         if (userRating < 0 || userRating > 5) {
           return res
             .status(400)
-            .json({ message: "La note doit être comprise entre 0 et 5!" });
+            .json({ message: "The rating must be between 0 and 5!" });
         }
         if (book.ratings.find((rating) => rating.userId === user)) {
           return res.status(401).json({ message: "Book already rated!" });

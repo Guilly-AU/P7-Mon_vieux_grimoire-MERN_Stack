@@ -2,8 +2,6 @@ const passwordValidator = require("password-validator");
 
 const passwordSchema = new passwordValidator();
 
-// Schema du mot de passe
-
 passwordSchema
   .is()
   .min(6)
@@ -25,7 +23,7 @@ module.exports = (req, res, next) => {
   } else {
     res.status(400).json({
       error:
-        "Votre mot de passe doit comporter entre 6 et 20 caractères, 1 majuscule, 1 chiffre et sans espace",
+        "Your password must be between 6 and 20 characters, 1 capital letter, 1 number and no spaces!",
     });
   }
 };

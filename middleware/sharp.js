@@ -23,7 +23,7 @@ const optimizedImg = async (req, res, next) => {
       next();
     });
   } catch (error) {
-    res.status(500).json({ error: "Impossible d'optimiser l'image" });
+    res.status(500).json({ error: "Unable to optimize image!" });
   }
 };
 
