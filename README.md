@@ -16,16 +16,13 @@ The mission is to develop a book rating site for a small chain of bookstores cal
 
 # Main steps
 ## 1- Setting up the app
-1-1 Create a Simple Express Server\
-1-2 Create a RESTful API\
-1-3 Set up a system authentication on your application\
-1-4 Add user file management on the app
+Create a Simple Express Server\
+Create a RESTful API\
+Set up a system authentication on your application\
+Add user file management on the app
 ## 2- Scoring functionality
-2-1 Management of the addition of a notation of a book\
-2-2 Management of the calculation of the average score of a book
-
-
-
+Management of the addition of a notation of a book\
+Management of the calculation of the average score of a book
 
 # How to lumch the project with npm
 
