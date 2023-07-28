@@ -1,4 +1,4 @@
-# P7-Mon_vieux_grimoire-MERN_Stack
+# P7 - Develop the back-end of a book rating site
 
 The mission is to develop a book rating site for a small chain of bookstores called "Le Vieux Grimoire" located in Lille, France. The site, titled "My Old Grimoire", will allow member users to add new books and assign them a rating visible to the public. As a back-end developer, I completed the project initiated by Kevin, a front-end developer with whom I am used to working. I created the API and ensured the proper functioning of the back-end, in particular by optimizing the images sent by users to respect the good practices of the Green Code.
 
