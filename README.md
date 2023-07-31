@@ -2,7 +2,7 @@
 
 The mission is to develop a book rating site for a small chain of bookstores called "Le Vieux Grimoire" located in Lille, France. The site, titled "My Old Grimoire", will allow member users to add new books and assign them a rating visible to the public. As a back-end developer, I completed the project initiated by Kevin, a front-end developer with whom I am used to working. I created the API and ensured the proper functioning of the back-end, in particular by optimizing the images sent by users to respect the good practices of the Green Code.
 
-# Technology used
+# Technologies used
 
 [![Mongoose](https://user-images.githubusercontent.com/125476287/256743250-87dd13c1-6112-46e0-94c1-b0057a4d457b.png)][1]
 [![Express.js](https://user-images.githubusercontent.com/125476287/256747425-53081fd2-752d-4ea7-a7e3-022987e74b37.png)][2]
