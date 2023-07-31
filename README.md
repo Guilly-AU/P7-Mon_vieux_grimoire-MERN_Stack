@@ -14,7 +14,7 @@ The mission is to develop a book rating site for a small chain of bookstores cal
 [3]: https://nodejs.org/en
 [4]: https://www.mongodb.com/fr-fr
 
-# Main steps
+# Main objectives
 ## 1- Setting up the app
 Create a Simple Express Server\
 Create a RESTful API\
