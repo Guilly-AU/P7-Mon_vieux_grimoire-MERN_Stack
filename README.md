@@ -35,6 +35,7 @@ Management of the calculation of the average score of a book
 `cd backend`
 `npm install`
 `node server`
+Copy the .env file to the root of the backend folder
 
 # Original file
 
