@@ -17,7 +17,7 @@ exports.createBook = (req, res, next) => {
   book
     .save()
     .then(() => {
-      res.status(201).json({ message: "Livre enregistré !" });
+      res.status(201).json({ message: "Book saved !" });
     })
     .catch((error) => {
       res.status(400).json({ error });
@@ -116,23 +116,18 @@ exports.rateBook = (req, res, next) => {
             userId: user,
             grade: userRating,
           };
+          book.ratings.push(newRating);
 
           const sumRatings = book.ratings.reduce(
             (sum, rating) => sum + rating.grade,
             0
           );
 
-          const updateAverageRating =
-            (sumRatings + userRating) / (book.ratings.length + 1);
+          const updateAverageRating = sumRatings / book.ratings.length;
+          book.averageRating = updateAverageRating.toFixed(2);
 
-          Book.findOneAndUpdate(
-            { _id: req.params.id, "ratings.userId": { $ne: user } },
-            {
-              $push: { ratings: newRating },
-              averageRating: updateAverageRating.toFixed(2),
-            },
-            { new: true }
-          )
+          book
+            .save()
             .then((updatedBook) => res.status(201).json(updatedBook))
             .catch((error) => res.status(401).json({ error }));
         }
