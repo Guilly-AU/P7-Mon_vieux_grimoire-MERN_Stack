@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const helmet = require("helmet");
 const dotenv = require("dotenv");
 dotenv.config();
 const mongoose = require("mongoose");
@@ -8,6 +9,7 @@ const userRoutes = require("./routes/user");
 const path = require("path");
 
 app.use(express.json());
+app.use(helmet({ crossOriginResourcePolicy: false }));
 
 // Database
 mongoose
