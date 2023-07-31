@@ -24,14 +24,14 @@ Add user file management on the app
 Management of the addition of a notation of a book\
 Management of the calculation of the average score of a book
 
-# How to lumch the project with npm
+# How to launch the project with npm
 
 ### 1- Clone the [repository](https://github.com/Guilly-AU/P7-Mon_vieux_grimoire-MERN_Stack.git)
-### 2- Lunch the frontend
+### 2- Launch the frontend
 `cd frontend`
 `npm install`
 `npm start`
-### 3- Lunch the backend
+### 3- Launch the backend
 `cd backend`
 `npm install`
 `node server`
