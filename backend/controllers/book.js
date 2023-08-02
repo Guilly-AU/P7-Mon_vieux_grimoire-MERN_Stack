@@ -124,7 +124,7 @@ exports.rateBook = (req, res, next) => {
           );
 
           const updateAverageRating = sumRatings / book.ratings.length;
-          book.averageRating = updateAverageRating.toFixed(2);
+          book.averageRating = updateAverageRating.toFixed(0);
 
           book
             .save()
