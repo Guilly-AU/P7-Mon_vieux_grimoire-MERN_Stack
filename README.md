@@ -27,11 +27,11 @@ Management of the calculation of the average score of a book
 # How to launch the project with npm
 
 ### 1- Clone the [repository](https://github.com/Guilly-AU/P7-Mon_vieux_grimoire-MERN_Stack.git)
-### 2- Launch the frontend
+### 2- Launching the frontend
 `cd frontend`
 `npm install`
 `npm start`
-### 3- Launch the backend
+### 3- Launching the backend
 `cd backend`
 `npm install`
 `node server`
