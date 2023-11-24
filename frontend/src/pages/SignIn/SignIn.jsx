@@ -31,7 +31,7 @@ function SignIn({ setUser }) {
         },
       });
       if (!response?.data?.token) {
-        setNotification({ error: true, message: 'Une erreur est survenue' });
+        setNotification({ error: true, message: 'An error occurred' });
         console.log('Something went wrong during signing in: ', response);
       } else {
         storeInLocalStorage(response.data.token, response.data.userId);
@@ -62,7 +62,7 @@ function SignIn({ setUser }) {
         console.log('Something went wrong during signing up: ', response);
         return;
       }
-      setNotification({ error: false, message: 'Votre compte a bien été créé, vous pouvez vous connecter' });
+      setNotification({ error: false, message: 'Your account has been successfully created. You can log in' });
     } catch (err) {
       setNotification({ error: true, message: err.message });
       console.log('Some error occured during signing up: ', err);
@@ -79,7 +79,7 @@ function SignIn({ setUser }) {
       </div>
       <div className={styles.Form}>
         <label htmlFor={email}>
-          <p>Adresse email</p>
+          <p>Email address</p>
           <input
             className=""
             type="text"
@@ -90,7 +90,7 @@ function SignIn({ setUser }) {
           />
         </label>
         <label htmlFor="password">
-          <p>Mot de passe</p>
+          <p>Password</p>
           <input
             className="border-2 outline-none p-2 rounded-md"
             type="password"
@@ -111,7 +111,7 @@ function SignIn({ setUser }) {
           >
             {isLoading ? <div className="" /> : null}
             <span>
-              Se connecter
+              Log in
             </span>
           </button>
           <span>OU</span>
@@ -128,7 +128,7 @@ function SignIn({ setUser }) {
                   ? <div className="mr-2 w-5 h-5 border-l-2 rounded-full animate-spin" /> : null
               }
             <span>
-              {'S\'inscrire'}
+              Sign up
             </span>
           </button>
         </div>

@@ -70,15 +70,15 @@ function BookForm({ book, validate }) {
     <form onSubmit={handleSubmit(onSubmit)} className={styles.Form}>
       <input type="hidden" id="id" {...register('id')} />
       <label htmlFor="title">
-        <p>Titre du livre</p>
+        <p>Title of the book</p>
         <input type="text" id="title" {...register('title')} />
       </label>
       <label htmlFor="author">
-        <p>Auteur</p>
+        <p>Author</p>
         <input type="text" id="author" {...register('author')} />
       </label>
       <label htmlFor="year">
-        <p>Année de publication</p>
+        <p>Year of publication</p>
         <input type="text" id="year" {...register('year')} />
       </label>
       <label htmlFor="genre">
@@ -86,30 +86,30 @@ function BookForm({ book, validate }) {
         <input type="text" id="genre" {...register('genre')} />
       </label>
       <label htmlFor="rate">
-        <p>Note</p>
+        <p>Rate</p>
         <div className={styles.Stars}>
           {generateStarsInputs(rating, register, readOnlyStars)}
         </div>
       </label>
       <label htmlFor="file">
-        <p>Visuel</p>
+        <p>Visual</p>
         <div className={styles.AddImage}>
           {filePreview || book?.imageUrl ? (
             <>
               <img src={filePreview ?? book?.imageUrl} alt="preview" />
-              <p>Modifier</p>
+              <p>Modify</p>
             </>
           ) : (
             <>
               <img src={addFileIMG} alt="Add file" />
-              <p>Ajouter une image</p>
+              <p>Add an image</p>
             </>
           )}
 
         </div>
         <input {...register('file')} type="file" id="file" />
       </label>
-      <button type="submit">Publier</button>
+      <button type="submit">Publish</button>
     </form>
   );
 }

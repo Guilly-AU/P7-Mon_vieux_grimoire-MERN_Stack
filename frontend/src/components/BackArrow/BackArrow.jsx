@@ -8,7 +8,7 @@ function BackArrow() {
     <Link to="/" className="backArrow">
       {' '}
       <FontAwesomeIcon icon={solid('arrow-left')} />
-      {' Retour'}
+      {' Back'}
     </Link>
   );
 }
